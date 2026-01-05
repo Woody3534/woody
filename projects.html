@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="page-projects">
 
   <canvas id="matrix"></canvas>
@@ -38,28 +39,77 @@
       </p>
     </section>
 
+    <!-- Project Card 4 -->
+    <section class="project-card">
+      <div class="project-header">
+        <h2>> YuumiBot for Discord (2022-2024)</h2>
+        <span class="status">DONE</span>
+      </div>
+
+      <div class="project-body">
+		<div class="project-image">
+		  <img src="gfx/yuumi.jpg">
+		</div>
+
+        <div class="project-info">
+          <p class="description">
+            A 6th player for your League of Legends games, that can actively watch a share screen and point out enemy jungler position or objective timers. You can also address her with Hey Yuumi, and ask a question about builds. Collects data from u.gg API. Only limitation of Yuumi is obviously, she can only attach to one person at a time.
+          </p>
+		  
+		  		 <div class="project-log">
+		  <div class="log-header">LATEST CHANGELOG</div>
+
+			<pre class="log">
+			> V1.0 first public test (02-2024)
+			<span class="change">[~]</span> fixed several bugs
+			<span class="add">[+]</span> given priority for speaking
+			<span class="add">[+]</span> changeable trigger word
+			<span class="add">[+]</span> more voices
+			<span class="add">[+]</span> access to meta builds
+			<span class="warn">[!]</span> limited to one frame per second
+			</pre>
+		</div>
+
+          <div class="tags">
+            <span>lua</span>
+			<span>discordia</span>
+            <span>javascript</span>
+          </div>
+        </div>
+		
+
+		
+      </div>
+
+      <div class="project-footer">
+        <a href="projects/yuumi/yuumi.html" class="glitch-hover" data-text="view details →">view details →</a>
+      </div>
+    </section>
+
     <!-- Project Card 1 -->
     <section class="project-card">
       <div class="project-header">
-        <h2><span style="color: #FF13F0;">> Penelope AI</span></h2>
+        <h2><span style="color: #FF13F0;">> Penelope AI</span> (2025-2026)</h2>
         <span class="status">WIP - BETA</span>
       </div>
 		
       <div class="project-body">
 	  
 	    <div class="project-image">
-          <img src="gfx/PENELOPE.png" alt="Game showcase">
+          <img src="gfx/PENELOPE.PNG">
         </div>
 	  
 		 <div class="project-log">
 		  <div class="log-header">LATEST CHANGELOG</div>
 
 			<pre class="log">
-			> V1.7 BETA (12-2025)
+			> V4 DEMO (12-2025)
 			<span class="add">[+]</span> mic input and talk mode
 			<span class="add">[+]</span> changeable hotkey to call 
+			<span class="add">[+]</span> more voices
 			<span class="change">[~]</span> personality settings
 			<span class="remove">[-]</span> fixed bugs & optimized
+			<span class="remove">[-]</span> patched security issues
 			<span class="warn">[!]</span> overlay issues unresolved
 			</pre>
 		</div>
@@ -78,14 +128,14 @@
       </div>
 
       <div class="project-footer">
-        <a href="#" class="glitch-hover" data-text="view details →">view details →</a>
+        <a href="projects/penelope/penelope.html" class="glitch-hover" data-text="view details →">view details →</a>
       </div>
     </section>
 
     <!-- Project Card 2 -->
     <section class="project-card">
       <div class="project-header">
-        <h2>> CODENAME: WYNN</h2>
+        <h2>> CODENAME: WYNN (2021-2024)</h2>
         <span class="status">DONE</span>
       </div>
 
@@ -111,10 +161,34 @@
       </div>
     </section>
 
+    <!-- Project Card 5 -->
+    <section class="project-card">
+      <div class="project-header">
+        <h2>> Arduino Drone (2022)</h2>
+        <span class="status">DONE</span>
+      </div>
+
+      <div class="project-body">
+		<div class="project-image">
+		  <img src="gfx/drone.jpg">
+		</div>
+
+        <div class="project-info">
+          <p class="description">
+           From a burnt motherboard, fully rebuilt a working drone and wrote its logic from zero. Has a web interface for controls, bluetooth/wifi control depending on the attachments.
+          </p>
+
+          <div class="tags">
+            <span>arduino</span>
+            <span>javascript</span>
+          </div>
+        </div>
+      </div>
+
     <!-- Project Card 3 -->
     <section class="project-card">
       <div class="project-header">
-        <h2>> THIS WEBSITE</h2>
+        <h2>> THIS WEBSITE (2026)</h2>
         <span class="status">WIP</span>
       </div>
 
@@ -130,6 +204,7 @@
           </p>
 
           <div class="tags">
+		    <span>html</span>
             <span>javascript</span>
             <span>frontend</span>
             <span>experiment</span>
@@ -138,7 +213,9 @@
       </div>
 
       <div class="project-footer">
-        <a href="#" class="glitch-hover" data-text="view details →">view details →</a>
+		<a href="#" id="open-portfolio-modal" class="btn ghost">
+		  view details →
+		</a>
       </div>
     </section>
 
@@ -167,9 +244,46 @@
 	</div>
   </footer>
 
+		<!-- Portfolio Modal -->
+	<div class="modal-overlay" id="portfolio-modal" aria-hidden="true">
+	  <div class="modal-terminal">
+		<button class="modal-close" aria-label="Close">×</button>
+
+		<pre class="terminal-content">
+	> project://portfolio-system
+	> status: experimental
+	> type: self-referential system
+
+	This website is both:
+	- a portfolio
+	- a documented experiment
+
+	Goals:
+	- archive progress honestly
+	- avoid fake narratives
+	- build something extensible
+
+	Failures included.
+	Polish added intentionally.
+
+	Scroll to read.
+		</pre>
+	  </div>
+	</div>
+
+
   <script src="matrix.js"></script>
   <script src="typing.js"></script>
   <script src="glitch.js"></script>
+  <script src="modal.js"></script>
+	
+
 </body>
 </html>
+
+
+
+
+
+
 

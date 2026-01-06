@@ -19,6 +19,41 @@ html, body {
   --text-dim: #9bbfb0;
 }
 
+/* =========================
+   RED MODE (UNSTABLE PROFILE)
+========================= */
+
+body.red-mode {
+  --green: #ff2e2e;
+  --green-soft: #ff6b6b;
+  --text: #ffd6d6;
+  --text-dim: #ff9a9a;
+
+  background-color: #080000;
+}
+
+body.red-mode #matrix {
+  filter: hue-rotate(-90deg) saturate(1.6) brightness(1.1);
+}
+
+body.red-mode .nav-left,
+body.red-mode h1,
+body.red-mode h2,
+body.red-mode .status,
+body.red-mode .btn {
+  text-shadow:
+    0 0 6px rgba(255, 60, 60, 0.6),
+    0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+body.red-mode .project-card,
+body.red-mode .about-terminal,
+body.red-mode .modal-terminal {
+  border-color: rgba(255, 60, 60, 0.5);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -756,3 +791,45 @@ section {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
+/* =========================
+   UNSTABLE WARNING
+========================= */
+
+.warning {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.warning.hidden {
+  display: none;
+}
+
+.warning-box {
+  font-family: "JetBrains Mono", monospace;
+  color: #ff3b3b;
+  font-size: 0.9rem;
+  max-width: 600px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 60, 60, 0.5);
+  background: rgba(10, 0, 0, 0.9);
+  box-shadow:
+    0 0 30px rgba(255, 0, 0, 0.3),
+    inset 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+/* subtle screen shake */
+body.red-mode {
+  animation: instability 0.15s infinite alternate;
+}
+
+@keyframes instability {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(1px, -1px); }
+}
+

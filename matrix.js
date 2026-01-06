@@ -24,7 +24,11 @@ function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
   ctx.fillRect(0, 0, width, height);
 
-  ctx.fillStyle = "#00ff88";
+  const isRed = document.body.classList.contains("red-mode");
+
+	ctx.fillStyle = isRed
+	  ? "rgba(255, 60, 60, 0.8)"
+	  : "rgba(0, 255, 136, 0.8)";
   ctx.font = `${fontSize}px monospace`;
 
   for (let i = 0; i < drops.length; i++) {
